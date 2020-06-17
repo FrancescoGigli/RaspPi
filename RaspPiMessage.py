@@ -1,8 +1,3 @@
-# Copyright (c) Microsoft. All rights reserved.
-# Licensed under the MIT license. See LICENSE file in the project root for full license information.
-
-import random
-import time
 import requests as req
 
 resp = req.get("http://192.168.1.9:15000//local/VehicleCounter/getDiagnostics.cgi")
