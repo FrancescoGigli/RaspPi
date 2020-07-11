@@ -32,6 +32,7 @@ def iothub_client_telemetry_sample_run():
         print ( "IoT Hub device sending periodic messages, press Ctrl-C to exit" )
 
         while True:
+            resp = req.get("http://192.168.1.9:15000//local/VehicleCounter/getDiagnostics.cgi")
             print(resp.text)
             client.send_message(resp.text)
             print ( "Message successfully sent" )
