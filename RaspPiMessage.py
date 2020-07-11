@@ -1,3 +1,4 @@
+import time
 import requests as req
 
 resp = req.get("http://192.168.1.9:15000//local/VehicleCounter/getDiagnostics.cgi")
