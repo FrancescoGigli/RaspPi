@@ -1,3 +1,4 @@
+import random
 import time
 import requests as req
 
@@ -31,7 +32,7 @@ def iothub_client_telemetry_sample_run():
             print(resp.text)
             client.send_message(resp.text)
             print ( "Message successfully sent" )
-            time.sleep(60)
+            time.sleep(10)
             
 
     except KeyboardInterrupt:
