@@ -1,3 +1,6 @@
+# Copyright (c) Microsoft. All rights reserved.
+# Licensed under the MIT license. See LICENSE file in the project root for full license information.
+
 import random
 import time
 import requests as req
@@ -33,7 +36,7 @@ def iothub_client_telemetry_sample_run():
             client.send_message(resp.text)
             print ( "Message successfully sent" )
             time.sleep(10)
-            
+
 
     except KeyboardInterrupt:
         print ( "IoTHubClient sample stopped" )
@@ -41,4 +44,4 @@ def iothub_client_telemetry_sample_run():
 if __name__ == '__main__':
     print ( "IoT Hub Quickstart" )
     print ( "Press Ctrl-C to exit" )
-    iothub_client_telemetry_sample_run()
+    iothub_client_telemetry_sample_run() 
