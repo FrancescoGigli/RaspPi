@@ -6,7 +6,6 @@ import time
 import requests as req
 
 resp = req.get("http://192.168.1.9:15000//local/VehicleCounter/getDiagnostics.cgi")
-resp.json()
 
 #print(resp.text)
 
@@ -35,9 +34,10 @@ def iothub_client_telemetry_sample_run():
         while True:
             # print(resp.text[2,6])
             string= resp.text
-            print(string[500:520])
+            message=(string[500:520])
+            print(message)
             #client.send_message(resp.text)
-            client.send_message(string)
+            client.send_message(message)
             print ( "Message successfully sent" )
             time.sleep(10)
             
