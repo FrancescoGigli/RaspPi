@@ -5,6 +5,8 @@ import random
 import time
 import requests as req
 
+resp = req.get("http://192.168.1.9:15000//local/VehicleCounter/getDiagnostics.cgi")
+
 #print(resp.text)
 
 # Using the Python Device SDK for IoT Hub:
@@ -30,12 +32,11 @@ def iothub_client_telemetry_sample_run():
         print ( "IoT Hub device sending periodic messages, press Ctrl-C to exit" )
 
         while True:
-            resp = req.get("http://192.168.1.9:15000//local/VehicleCounter/getDiagnostics.cgi")
             print(resp.text)
             client.send_message(resp.text)
             print ( "Message successfully sent" )
             time.sleep(10)
-
+            
 
     except KeyboardInterrupt:
         print ( "IoTHubClient sample stopped" )
@@ -43,4 +44,4 @@ def iothub_client_telemetry_sample_run():
 if __name__ == '__main__':
     print ( "IoT Hub Quickstart" )
     print ( "Press Ctrl-C to exit" )
-    iothub_client_telemetry_sample_run() 
+    iothub_client_telemetry_sample_run()
