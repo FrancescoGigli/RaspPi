@@ -32,15 +32,11 @@ def iothub_client_telemetry_sample_run():
         print ( "IoT Hub device sending periodic messages, press Ctrl-C to exit" )
 
         while True:
-            # print(resp.text[2,6])
-            string= resp.text
-            message=(string[500:520])
-            print(message)
-            #client.send_message(resp.text)
-            client.send_message(message)
+            print(resp.text)
+            client.send_message(resp.text)
             print ( "Message successfully sent" )
             time.sleep(10)
-            
+
 
     except KeyboardInterrupt:
         print ( "IoTHubClient sample stopped" )
@@ -48,4 +44,4 @@ def iothub_client_telemetry_sample_run():
 if __name__ == '__main__':
     print ( "IoT Hub Quickstart" )
     print ( "Press Ctrl-C to exit" )
-    iothub_client_telemetry_sample_run()
+    iothub_client_telemetry_sample_run() 
